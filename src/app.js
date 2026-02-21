@@ -10,7 +10,7 @@ const program = new Command();
 
 program
   .name("data-cli")
-  .description("CLI for GitHub and Country data analysis")
+  .description("Professional CLI tool for multi-API data retrieval and statistical analysis")
   .version("1.0.0");
 
 /* ======================
