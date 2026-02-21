@@ -1,25 +1,39 @@
-import { validateRepoInput } from "../src/services/validator.js";
+import { validateRepoInput, validateCountryInput } from "../src/services/validator.js";
 
 describe("validateRepoInput", () => {
 
-  test("should validate correct input", () => {
-    const result = validateRepoInput({
-      owner: "facebook",
-      repo: "react"
-    });
-
+  test("should validate correct repo input", () => {
+    const input = { owner: "facebook", repo: "react" };
+    const result = validateRepoInput(input);
     expect(result.owner).toBe("facebook");
+    expect(result.repo).toBe("react");
   });
 
-  test("should throw error for missing owner", () => {
+  test("should throw error for invalid repo input", () => {
     expect(() =>
-      validateRepoInput({ repo: "react" })
+      validateRepoInput({ owner: "", repo: "" })
     ).toThrow("Validation Error");
   });
 
-  test("should throw error for missing repo", () => {
+});
+
+describe("validateCountryInput", () => {
+
+  test("should validate correct country input", () => {
+    const input = { name: "Argentina" };
+    const result = validateCountryInput(input);
+    expect(result.name).toBe("Argentina");
+  });
+
+  test("should throw error for empty country name", () => {
     expect(() =>
-      validateRepoInput({ owner: "facebook" })
+      validateCountryInput({ name: "" })
+    ).toThrow("Validation Error");
+  });
+
+  test("should throw error for missing country name", () => {
+    expect(() =>
+      validateCountryInput({})
     ).toThrow("Validation Error");
   });
 
