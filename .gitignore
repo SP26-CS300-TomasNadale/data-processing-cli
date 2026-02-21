@@ -143,3 +143,8 @@ repo-data.json
 country-data.json
 full-report.json
 
+# Generated data files
+*.json
+!package.json
+!package-lock.json
+>>>>>>> 9c2b8fd436580ad68833aaa586c3b229fdaad8d8
