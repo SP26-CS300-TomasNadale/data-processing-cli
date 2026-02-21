@@ -12,6 +12,7 @@ program
   .name("data-cli")
   .description("Professional CLI tool for multi-API data retrieval and statistical analysis")
   .version("1.0.0");
+  .addHelpText("after", "\nExample:\n  node src/app.js full-report --owner facebook --repo react --country Argentina --save\n")
 
 /* ======================
    GitHub Repo Command
